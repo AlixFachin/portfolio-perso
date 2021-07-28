@@ -1,0 +1,20 @@
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#hero > * {
+  margin-left: calc(min(2em,10%));
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.hero-emphasis {
+  color: #D64933;
+}

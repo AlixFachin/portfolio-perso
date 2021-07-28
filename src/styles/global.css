@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', 'sans-serif';
+  margin: 0;
+}
+
+html,body {
+  min-height: 100vh;
+}
+
+body {
+  background: #56CCF2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  background-repeat: no-repeat;
+}
+
+h1, h2, h3 {
+  font-family: 'Lato';
+}
+
+p {
+  margin: 16px auto;
+  line-height: 1.5em;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* position: fixed;
+  bottom: 0; */
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: darkgray;
+
+  width: 100vw;
+
+  background-color: #2B303A;
+  color: #FFF;
+}
+
+footer .social-links-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.social-links-row  svg {
+  /* Font awesome social icons */
+  width: 5rem;
+  height: 5rem;
+  font-size: 3rem;
+  margin: 2rem;
+  transition: all 0.5s linear;
+}
+
+.social-links-row a {
+  color: white;
+
+}
+
+.social-links-row  svg:hover {
+  transform: scale(1.3);
+}
+
+footer .footer-disclaimer {
+  font-size: x-small;
+  font-style: italic;
+  color:grey;
+
+}
+
+footer hr {
+  width: 50%;
+}
+
+
