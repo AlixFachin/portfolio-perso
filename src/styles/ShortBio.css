@@ -27,5 +27,13 @@
 
 .bio-text {
   padding: 1em;
-  
+}
+
+.image-placeholder {
+  text-align: center;
+}
+
+#self-portrait {
+  border-radius: 5px;
+  width: 250px;
 }
