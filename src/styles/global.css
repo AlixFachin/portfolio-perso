@@ -11,10 +11,7 @@ html,body {
 }
 
 body {
-  background: #56CCF2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
-  background-repeat: no-repeat;
+  
 }
 
 h1, h2, h3 {
@@ -36,8 +33,7 @@ footer {
   bottom: 0; */
   box-sizing: border-box;
   padding: 1em;
-  background-color: darkgray;
-
+  
   width: 100vw;
 
   background-color: #2B303A;

@@ -1,0 +1,31 @@
+.self-introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 3em;
+
+  background: #56CCF2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  background-repeat: no-repeat;
+
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+
+  color: white;
+
+  margin-bottom: 3em;
+
+}
+
+.bio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10x;
+
+}
+
+.bio-text {
+  padding: 1em;
+  
+}

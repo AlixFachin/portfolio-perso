@@ -4,6 +4,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  background: white;
+
 }
 
 #hero > * {
@@ -15,6 +18,16 @@ h1 {
   font-weight: 500;
 }
 
+h1:not(:last-child) {
+  margin-bottom: 0;
+}
+
+h1:last-child {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+
 .hero-emphasis {
-  color: #D64933;
+  color: #2F80ED;
 }
