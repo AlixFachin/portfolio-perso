@@ -12,5 +12,21 @@ module.exports = {
     copyright: 'Copyright 2021 - Alix Fachin'
 
   },
-  plugins: [],
+  plugins: [
+    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/src/projects`,
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: `${__dirname}/src/blog`,
+      }
+    },
+  ],
 }

@@ -29,8 +29,8 @@ export default function Footer() {
         <a href="https://twitter.com/AlixDev5" alt="Twitter"><FontAwesomeIcon icon={faTwitter} /></a>
       </div>
       <hr />
-      <p class="footer-disclaimer"> { copyright } </p>
-      <p class="footer-disclaimer">
+      <p className="footer-disclaimer"> { copyright } </p>
+      <p className="footer-disclaimer">
         Realized with love, sweat and coffee (maybe in a different order) using <a href="https://www.gatsbyjs.com">Gatsby.js</a>
       </p>
     </footer>
