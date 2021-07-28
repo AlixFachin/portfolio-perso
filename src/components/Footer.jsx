@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
       <hr />
       <p class="footer-disclaimer">
-        Realized with love, sweat and coffee (although maybe in a different order) using <a href="https://www.gatsbyjs.com">Gatsby.js</a>
+        Realized with love, sweat and coffee (maybe in a different order) using <a href="https://www.gatsbyjs.com">Gatsby.js</a>
       </p>
     </footer>
   )
