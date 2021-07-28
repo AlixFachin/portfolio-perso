@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles/ShortBio.css"
+import { StaticImage } from "gatsby-plugin-image"
 
 /* About Component 
   This component will display a quick summary / self introduction
@@ -12,7 +13,14 @@ export default function ShortBio() {
       <h2>ABOUT ME</h2>
       <div className="bio-container">
         <div className="image-placeholder"> 
-          <img alt="self portrait" src="/PhotoID.jpg" id="self-portrait" />
+          <StaticImage 
+            src="../images/PhotoID.jpg"
+            alt="self-portrait" 
+            id="self-portrait"
+            placeholder="blurred"
+            width={250}
+            heigth={250}
+          /> 
         </div>
         <div className="bio-text">
           <p> After graduating from a computer science university in France (ENSIMAG), I worked in finance, trading equity derivatives in Asia and in New York for about 10 years. </p>
