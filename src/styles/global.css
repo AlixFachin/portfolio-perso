@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
 body {
-  font-family: 'Roboto', 'sans-serif';
+  --primary-color: #2F80ED;
+  --secondary-color: #56CCF2;
+  --error-color: #DD7373;
+  --theme-grey: #EEE5E9;
+  --theme-warning: #EAD94C; 
+
+  font-family: 'Nunito', 'sans-serif';
   margin: 0;
 }
 
@@ -10,12 +16,20 @@ html,body {
   min-height: 100vh;
 }
 
-body {
-  
-}
-
 h1, h2, h3 {
   font-family: 'Lato';
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 p {

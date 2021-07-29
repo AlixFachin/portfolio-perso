@@ -14,35 +14,48 @@ export default function ProjectSummary() {
       id
       frontmatter {
         github
-        date
         slug
         title
+        description
         tags
+        deployedLink
       }
-      excerpt
     }
   }
     }
   `);
 
-  console.log(data);
+  function displayTagsWithBadges(tagsString) {
+    const tagArray = tagsString.split(",");
+    return (
+      <div className="tagList">
+        { tagArray.map(tag => (
+            <div className="tag" data-tag={tag.trim()} key={tag.trim()}>
+              {tag.trim()}
+            </div>
+          ))
+        }      
+      </div>);
+  }
 
   return (
     <div id="project-summary-container">
       <h2>Recent Projects</h2>
       <div className="project-window">
         { data.allMarkdownRemark.nodes.map( project => (
-            <div className="project-thumb" >
-              <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
+            <div className="project-thumb" key={project.id}>
+              <Link to={"/projects/" + project.frontmatter.slug} >
                 <h3>{ project.frontmatter.title }</h3>
               </Link>
-              <p>{ project.frontmatter.date}</p>
-              <p className="project-github-link">
-                  <a href={project.frontmatter.github} alt="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
-              </p>
+              { displayTagsWithBadges(project.frontmatter.tags)}
               <p className="project-thumb-extract">
-                { project.excerpt }
+                { project.frontmatter.description }
               </p>
+              <div className="project-button-row">
+                <Link to={"/projects/" + project.frontmatter.slug} ><span>Description</span></Link>
+                <a href={project.frontmatter.github} alt="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
+                <a href={project.frontmatter.deployedLink} alt="Deployment link">Live</a>
+              </div>
             </div>
           ) )
         }        
@@ -52,7 +65,7 @@ export default function ProjectSummary() {
   )
 }
 
-/*
+/* 
 
 
 
