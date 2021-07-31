@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby';
+import Fade from 'react-reveal/Fade';
 import "../styles/ProjectSummary.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import VisibilitySensor from 'react-visibility-sensor';
+import { GatsbyImage } from "gatsby-plugin-image"
 
 
 export default function ProjectSummary() {
+
+  const [visibilityState, setVisibilityState] = useState(false)
 
   const data = useStaticQuery(graphql`
     query GetLatestProjects {
@@ -19,6 +24,11 @@ export default function ProjectSummary() {
         description
         tags
         deployedLink
+        thumb {
+          childImageSharp {
+            gatsbyImageData(width:200)
+          }
+        }
       }
     }
   }
@@ -39,15 +49,19 @@ export default function ProjectSummary() {
   }
 
   return (
+    <VisibilitySensor partialVisibility  
+     onChange={(isVisible) => setVisibilityState(isVisible) } >
     <div id="project-summary-container">
-      <h2>Recent Projects</h2>
+      <Fade top duration={800} when={visibilityState} ><h2>Recent Projects</h2></Fade>
       <div className="project-window">
-        { data.allMarkdownRemark.nodes.map( project => (
-            <div className="project-thumb" key={project.id}>
+        { data.allMarkdownRemark.nodes.map( (project, idx) => (
+            <Fade duration={800} delay={200*(idx+1)} when={visibilityState} key={project.id}>
+            <div className="project-thumb" >
               <Link to={"/projects/" + project.frontmatter.slug} >
                 <h3>{ project.frontmatter.title }</h3>
               </Link>
               { displayTagsWithBadges(project.frontmatter.tags)}
+              <GatsbyImage image={project.frontmatter.thumb.childImageSharp.gatsbyImageData} alt={ project.frontmatter.title + " thumb" } />
               <p className="project-thumb-extract">
                 { project.frontmatter.description }
               </p>
@@ -56,12 +70,13 @@ export default function ProjectSummary() {
                 <a href={project.frontmatter.github} alt="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
                 <a href={project.frontmatter.deployedLink} alt="Deployment link">Live</a>
               </div>
-            </div>
+            </div></Fade>
           ) )
         }        
       </div>
 
     </div>
+    </VisibilitySensor>
   )
 }
 

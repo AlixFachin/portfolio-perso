@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 2em;
   text-align: center;
+  min-height: 90vh;
 }
 
 #project-summary-container a:link {
@@ -34,35 +35,47 @@ hr {
 }
 
 .project-thumb {
-  border: solid 2px var(--primary-color); 
+  border: solid 2px var(--theme-grey); 
   border-radius: 5px;
   margin: 5px 4em;
-  padding: 1em;
-  box-shadow: 5px 5px 0 #2F80ED66;
+  /* box-shadow: 5px 5px 0 rgba(0,0,0,0.1); */
 }
 
 .project-thumb h3 {
+  /* Project Title */
   text-align: center;
   font-weight: 500;
-  margin: 20px auto 0px; 
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  margin: 0 0 1em 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+.project-thumb img {
+  border-radius: 15px;
 }
 
 /* Tag and displaying tag list */
 .tagList {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
 
   align-items: center;
   font-size: 100%;
-  margin: 10px 5px;
+  margin: 5px 5px 20px 5px;
 }
 
 .tag {
-  border: 1px solid var(--primary-color);
   border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   padding: 2px 5px;
   font-size: small;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 /* Button row */
@@ -72,14 +85,22 @@ hr {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   align-items: center;
+  margin: 0.5em;
 }
 
 .project-button-row > a {
   display: inline-block;
-  background-color: var(--theme-grey);
+  background-color: white;
+  border: 1px solid var(--theme-warning) ;
+  color: black;
   padding: 10px 16px;
   border-radius: 10px;
   margin-top: 20px;
+  transition: all ease-in-out 0.5s;
 }
 
+.project-button-row > a:hover {
+  background-color: white;
+  background-color: var(--theme-warning);
+}
 

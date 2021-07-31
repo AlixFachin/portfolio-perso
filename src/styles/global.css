@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@300&family=Open+Sans&display=swap');
+
 
 body {
   --primary-color: #2F80ED;
@@ -8,7 +10,7 @@ body {
   --theme-grey: #EEE5E9;
   --theme-warning: #EAD94C; 
 
-  font-family: 'Nunito', 'sans-serif';
+  font-family: 'Open Sans', 'sans-serif';
   margin: 0;
 }
 
@@ -17,7 +19,7 @@ html,body {
 }
 
 h1, h2, h3 {
-  font-family: 'Lato';
+  font-family: 'Biryani';
 }
 
 h1 {

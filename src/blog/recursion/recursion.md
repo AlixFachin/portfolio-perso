@@ -1,7 +1,7 @@
 ---
 
-title: React optimization - useMemo and useCallback hooks
-tags: React.js
+title: About Recursive Algorithms
+tags: Algorithms
 slug: react-performance
 date: May 7th, 2021
 

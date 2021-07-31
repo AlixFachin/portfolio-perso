@@ -1,0 +1,25 @@
+.project-details h2 {
+  font-size: 3.5em;
+  margin-top: 80px;
+}
+
+.project-details h3 {
+  font-size: 2em;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.project-body {
+  padding: 10px;
+}
+
+.project-body h1 {
+  font-size: 2em;
+}
+.project-body h2 {
+  font-size: 1.5em;
+}
+.project-body h3 {
+  font-size: 1em;
+  font-weight: 500;
+}
