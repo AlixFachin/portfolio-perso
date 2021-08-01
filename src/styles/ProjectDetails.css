@@ -23,3 +23,10 @@
   font-size: 1em;
   font-weight: 500;
 }
+
+h1.projectTitle {
+ background-color: var(--primary-color);
+ color: white;
+ margin-top: 1em;
+ margin-bottom: 0.5em; /* we want the tech stack tags to be close to the title */
+}

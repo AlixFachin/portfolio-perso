@@ -11,7 +11,7 @@ thumb: ./easycrypto-thumb.jpg
 featuredImg: ./markus-spiske-matrix-unsplash.jpg
 ---
 
-![this is an interesting alt text](easycrypto-thumb.jpg)
+![cryptography coding image](easycrypto-thumb.jpg)
 
 # Summary 😎
 This repository contains a code project I realized during my time at [Code Chrysalis](https://www.codechrysalis.io). <br>

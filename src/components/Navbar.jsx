@@ -14,7 +14,7 @@ export default function Navbar() {
       </div>
 
       <div className="nav-icon">
-        <Link to="/projects" alt="projects"><FontAwesomeIcon icon={faLaptopCode} /></Link>
+        <Link to="/all-projects" alt="projects"><FontAwesomeIcon icon={faLaptopCode} /></Link>
       </div>
 
       <div className="nav-icon">

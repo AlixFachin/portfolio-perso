@@ -70,12 +70,30 @@ p {
 
 }
 
+nav a {
+  color: var(--theme-grey);
+}
+
+nav a:link {
+  text-decoration: none;
+}
+
+nav a:visited {
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:active {
+  text-decoration: none;
+}
+
 .nav-icon {
   margin-top: 2em;
   margin-bottom: 2em;
-
-  color: white;
-
 }
 
 .content-layout > .content {

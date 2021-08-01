@@ -1,0 +1,13 @@
+.all-projects-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  margin: 2em;
+
+}
+
+.all-projects-grid .project-thumb {
+  text-align: center;
+  margin: 0px;
+}
