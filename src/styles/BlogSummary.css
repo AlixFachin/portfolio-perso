@@ -34,7 +34,6 @@
   color: #2F80ED;
 }
 
-
 .post-thumb:nth-of-type(odd) {
   color:white;
   background: #2F80ED;  /* fallback for old browsers */

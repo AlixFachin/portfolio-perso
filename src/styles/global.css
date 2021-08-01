@@ -10,6 +10,8 @@ body {
   --theme-grey: #EEE5E9;
   --theme-warning: #EAD94C; 
 
+  --nav-width: 80px;
+
   font-family: 'Open Sans', 'sans-serif';
   margin: 0;
 }
@@ -37,6 +39,63 @@ h3 {
 p {
   margin: 16px auto;
   line-height: 1.5em;
+}
+
+.content-layout {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.content-layout nav {
+  height: 100vh;
+  position: fixed;
+  top:0;
+  padding: 5px;
+  width: var(--nav-width);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: x-large;
+
+  background: #56CCF2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  background-repeat: no-repeat;
+
+  color: white;
+
+}
+
+.nav-icon {
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  color: white;
+
+}
+
+.content-layout > .content {
+  
+  padding-left: calc(var(--nav-width));
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.content-layout article {
+  max-width: 600px;
+  width: calc(100wv - var(--nav-width));
+  padding-left: 2em;
+}
+
+.content-layout footer {
+  width: calc(100wv - var(--nav-width));
 }
 
 /* FOOTER */
