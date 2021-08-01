@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react'
-// import Fade from 'react-reveal/Fade'
+import React, { useEffect } from 'react'
+import Fade from 'react-reveal/Fade'
 import "../styles/hero.css"
-// import VisibilitySensor from 'react-visibility-sensor';
+import { Link as ScrollLink} from 'react-scroll'
 
 export default function Hero() {
-
-  // const [isHeroVisible, setisHeroVisible] = useState(false)
 
   useEffect(() => {
     window.particlesJS.load('particles-js','/particlesconfig.json');
@@ -16,10 +14,20 @@ export default function Hero() {
     <div id="hero">
       {/* <VisibilitySensor onChange={ (newVisibility) => setisHeroVisible(newVisibility)  }>
         <Fade left opposite delay={300} duration={1200}  > */}
-          <h1>Hi there! My name is <span className="hero-emphasis">Alix Fachin</span></h1>
-          <h1>and welcome to my portfolio website</h1>
+      <h1>Hi there! My name is <span className="hero-emphasis">Alix Fachin</span></h1>
+      <h1>and welcome to my portfolio website</h1>
         {/* </Fade>
       </VisibilitySensor> */}
+      <Fade delay={400} duration={1200}>
+      <div className="section-scroll">
+        <ScrollLink to="blog-summary-container" smooth duration={1000}>
+          <h2>Blog Posts</h2>
+        </ScrollLink>
+        <ScrollLink to="project-summary-container" smooth duration={1000}>
+          <h2>Projects</h2>
+        </ScrollLink>
+      </div>
+      </Fade>
       <div id="particles-js">
       </div>
     </div>

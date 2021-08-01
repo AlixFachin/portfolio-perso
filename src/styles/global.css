@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@300&family=Open+Sans&display=swap');
 
@@ -19,7 +19,7 @@ html,body {
 }
 
 h1, h2, h3 {
-  font-family: 'Biryani';
+  font-family: 'Montserrat';
 }
 
 h1 {
