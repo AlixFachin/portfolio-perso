@@ -22,6 +22,16 @@ html,body {
   min-height: 100vh;
 }
 
+@media (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+  body {
+    --nav-width: 40px;
+  }
+  
+}
+
 h1, h2, h3 {
   font-family: 'Montserrat';
 }
@@ -75,20 +85,16 @@ p {
 nav a {
   color: var(--theme-grey);
 }
-
 nav a:link {
   text-decoration: none;
 }
-
 nav a:visited {
   text-decoration: none;
 }
-
 nav a:hover {
   text-decoration: none;
   color: white;
 }
-
 nav a:active {
   text-decoration: none;
 }
@@ -117,6 +123,7 @@ nav a:active {
   max-width: 600px;
   width: calc(100wv - var(--nav-width));
   padding-left: 2em;
+  padding-right: 2em;
 }
 
 .content-layout footer {

@@ -14,8 +14,9 @@ export default function Hero() {
     <div id="hero">
       {/* <VisibilitySensor onChange={ (newVisibility) => setisHeroVisible(newVisibility)  }>
         <Fade left opposite delay={300} duration={1200}  > */}
-      <h1>Hi there! My name is <span className="hero-emphasis">Alix Fachin</span></h1>
-      <h1>and welcome to my portfolio website</h1>
+      <h1>Hi there! My name is </h1>
+      <h1><span className="hero-emphasis">Alix Fachin</span></h1>
+      <h1>Welcome to my portfolio website!</h1>
         {/* </Fade>
       </VisibilitySensor> */}
       <Fade delay={400} duration={1200}>

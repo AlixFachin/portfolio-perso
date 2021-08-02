@@ -32,15 +32,26 @@
   margin: 0 0 1em 0;
   padding: 0.5em;
   box-sizing: border-box;
-
 }
 
 .project-window {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 2em;
+  gap: 10px;
 }
+
+@media (max-width: 550px) {
+  .project-window {
+    grid-template-columns: 1fr;
+  } 
+}
+@media (max-width: 850px) and (min-width:551px) {
+  .project-window {
+    grid-template-columns: 1fr 1fr;
+  } 
+}
+
 
 hr {
   width: 50%;
@@ -51,7 +62,7 @@ hr {
 .project-thumb {
   border: solid 2px var(--theme-grey); 
   border-radius: 5px;
-  margin: 5px 4em;
+  /* margin: 5px 4em; */
   /* box-shadow: 5px 5px 0 rgba(0,0,0,0.1); */
 }
 

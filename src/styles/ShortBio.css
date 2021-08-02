@@ -22,6 +22,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 10x;
+}
+
+@media (max-width: 550px) {
+  .bio-container {
+    grid-template-columns: 1fr;
+  } 
+
+  .self-introduction {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
+  }
 
 }
 

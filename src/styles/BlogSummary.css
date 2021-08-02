@@ -1,3 +1,17 @@
+/*
+  Component hierarchy:
+    blog-summary-container (flexbox-column)
+    CONTAINS: 
+       header
+       blog-post-list (flexbox-column)
+       CONTAINS
+          post-and-thumb-container (grid, reactive)
+          CONTAINS
+             Gatdsby image (featured image)
+             blog title/summary data
+
+*/
+
 #blog-summary-container {
   display: flex;
   flex-direction: column;
@@ -8,12 +22,28 @@
   min-height: 80vh;
 }
 
-.post-and-thumb-container {
+.blog-posts-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.post-and-thumb-container {
+  display: grid;
+  grid-template-columns: 150px 1fr;
   align-items: center;
-  padding: 5px 3em;
+}
+
+@media (max-width: 550px) {
+  .post-and-thumb-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 0.5em;
+    margin-bottom: 2em;
+    border: 1px solid var(--theme-grey);
+    padding: 0.5em;
+  } 
 }
 
 .post-summary {
@@ -46,12 +76,7 @@
   padding: 5px 15px;
 }
 
-.blog-posts-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
+
 
 .post-summary h3 {
   background-color: var(--primary-color);
