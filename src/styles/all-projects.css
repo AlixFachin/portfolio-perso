@@ -11,3 +11,19 @@
   text-align: center;
   margin: 0px;
 }
+
+.all-projects-grid a {
+  color: black;
+}
+.all-projects-grid a:link {
+  text-decoration: none;
+}
+.all-projects-grid a:visited {
+  text-decoration: none;
+}
+.all-projects-grid a:hover {
+  text-decoration: none;
+}
+.all-projects-grid a:active {
+  text-decoration: none;
+}

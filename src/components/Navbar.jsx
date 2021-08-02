@@ -18,7 +18,7 @@ export default function Navbar() {
       </div>
 
       <div className="nav-icon">
-        <Link to="/blog" alt="blog"><FontAwesomeIcon icon={faBookOpen} /></Link>
+        <Link to="/all-blogposts" alt="blog"><FontAwesomeIcon icon={faBookOpen} /></Link>
       </div>
       
     </nav>

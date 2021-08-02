@@ -96,6 +96,7 @@ nav a:active {
   margin-bottom: 2em;
 }
 
+
 .content-layout > .content {
   
   padding-left: calc(var(--nav-width));
@@ -104,6 +105,10 @@ nav a:active {
   flex-direction: column;
   width: 100vw;
   box-sizing: border-box;
+}
+
+.content h1 {
+  margin-top: 0.5em;
 }
 
 .content-layout article {

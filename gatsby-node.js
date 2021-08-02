@@ -17,23 +17,39 @@ exports.createPages = async ({ graphql, actions }) => {
   
   const { data } = await graphql(`
     query GetLatestProjectSlugs {
-      allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}) {
+      projectList:allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}) {
         nodes {
           id
           frontmatter {
-            slug 
+            slug
+          }
+        }
+      }
+      blogList:allMarkdownRemark(filter: {fields: {collection: {eq: "blog"}}}) {
+        nodes {
+          id
+          frontmatter {
+            slug
           }
         }
       }
     }    
   `);
 
-  data.allMarkdownRemark.nodes.forEach(node => {
+  data.projectList.nodes.forEach(node => {
     actions.createPage({
       path: '/projects/' + node.frontmatter.slug,
       component: path.resolve('./src/templates/project-details.js'),
       context: { slug: node.frontmatter.slug },
     })
   });
+  data.blogList.nodes.forEach(node => {
+    actions.createPage({
+      path: `/posts/${node.frontmatter.slug}`,
+      component: path.resolve('./src/templates/blogpost-details.js'),
+      context: { slug: node.frontmatter.slug },
+    })
+  });
+
 
 };

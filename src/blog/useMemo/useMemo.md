@@ -4,6 +4,8 @@ title: React optimization - useMemo and useCallback hooks
 tags: React.js
 slug: react-performance
 date: May 7th, 2021
+thumb: ./halgatewood-com-unsplash.jpg
+description: About component rendering in React.js and their optimization
 
 ---
 
@@ -12,7 +14,7 @@ date: May 7th, 2021
 In this article we will look at two react hooks `useMemo` and `useCallback`, which will bring us to look at when React renders components.
 We will look only at function-based components and not class-based components. (I am not familiar with such class-based components).
 
-![Web front-end design draft](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/72j08gink9b9w2a2no32.jpg)
+![Web front-end design draft](./halgatewood-com-unsplash.jpg)
 _Photo by [HalGatewood.com](https://unsplash.com/@halacious?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText") on [Unsplash](https://unsplash.com/s/photos/web-development?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 # Level required
@@ -32,7 +34,7 @@ You can see then that if rendering of a child element is expensive (e.g. big com
 ## Firefox / Chrome dev tools
 Second digression, to see visually if a component has been rendered or not, you can use the [React dev tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/). In the "component" tab and the "settings" panel (gear wheel) you can check the box "Highlight updates when components render". <br>
 Then each time a component renders, its border will flash green.
-![Choosing React Dev tools rendering monitor in Firefox](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/48b22tmy9tso7tvllfve.gif)
+
 ## Adding a counter
 In experimental projects, we can add a counter inside the body of the component. Make sure not to use `useState` to keep track of this variable value. Changing the state would trigger a re-render, which would increment the counter, which would trigger a re-render, etc. Welcome to the world of infinite loops.
 To keep the variable counter into memory, we need to use the [`useRef`](https://reactjs.org/docs/hooks-reference.html#useref) hook, which keeps a mutable variable in memory but doesn't trigger a re-render on change.

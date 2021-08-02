@@ -1,7 +1,8 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import "../styles/BlogSummary.css"
 import Fade from 'react-reveal/Fade'
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function BlogSummary() {
 
@@ -15,6 +16,12 @@ export default function BlogSummary() {
             title
             tags
             date
+            description
+            thumb {
+            childImageSharp {
+              gatsbyImageData(width:200)
+              }
+           }
           }
           excerpt
         }
@@ -27,14 +34,23 @@ export default function BlogSummary() {
       <Fade top={true} delay={100} duration={800} ><h2>Recent Articles</h2> </Fade>
       <div className="blog-posts-list">
         {
-          data.allMarkdownRemark.nodes.map( (post, idx) => (
-            <Fade left={ (idx %2 === 0)} right={(idx%2 !== 0)} duration={800} key={post.frontmatter.title}>
-              <div className="post-thumb">
-                <h3>{ post.frontmatter.title}</h3>
-                <p> { post.excerpt} </p>
-              </div>
-            </Fade>
-          ))
+          data.allMarkdownRemark.nodes.map( (post, idx) => {
+            
+            return (
+            <div className="post-and-thumb-container" key={`post-container-${idx}`}>
+              <Fade left duration={800} key={`post-thumb-${idx}`}>
+                <GatsbyImage image={post.frontmatter.thumb.childImageSharp.gatsbyImageData}  />
+              </Fade>
+              <Fade right duration={800} key={`post-summary-${idx}`}>
+                <Link to={`/posts/${post.frontmatter.slug}`}>
+                  <div className="post-summary">
+                    <h3>{ post.frontmatter.title}</h3>
+                    <p> { post.frontmatter.description} </p>
+                  </div>
+                </Link>
+              </Fade>
+            </div>);
+          })
         }
       </div>
     </div>

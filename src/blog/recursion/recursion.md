@@ -2,16 +2,20 @@
 
 title: About Recursive Algorithms
 tags: Algorithms
-slug: react-performance
+slug: about-recursion
 date: May 7th, 2021
-
+thumb: ./ludde-lorentz.jpg
+description: Generic review of recursive algorithms and advice to design such algorithms
 ---
 
 # About recursive algorithms
 
 > A thousand mile trip begins with a single step
 
-Photo by Tine Ivanič on Unsplash
+![infinite staircase](./ludde-lorentz.jpg)
+
+Photo by [Ludde Lorentz](https://unsplash.com/@luddelorentz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+  
 
 Before diving into it, just a bit of background: I heard about recursive algorithms more than 20 years ago, in an applied maths lesson. With time and practice I found the way of thinking in recursion relatively natural - but looking around articles about recursion and YouTube videos I found plenty of information about call stacks etc, but something crucial was missing everywhere I looked: the general principle of recursion. In this article we will not look at code snippets, because the goal is to understand the general thought process, to ultimately help people coming up with recursive algorithms.
 > Why recursion when you could use a for loop?
@@ -20,7 +24,6 @@ When you have to write down an algorithm, the initial idea very often comes firs
 However, for some problems, it is difficult to see and plan your algorithm properly because you don't know the whole universe, and/or it is difficult to plan for everything.
 
 ## Example1: Compounded interest rates
-Photo by NeONBRAND on Unsplash
 
 For example, imagine you have a savings account which you cannot access for 10 years, and every Jan 1st the bank credits you 4% of the balance as of Dec 31st. How would you compute the account balance at any given year?
 The first possibility would be to try and figure out a formula which enables you to compute the balance according to the date.
@@ -31,10 +34,15 @@ But more intuitively, if you know the balance of the previous year, it is easy t
 The above expression is recursive, so writing down the function computing the account balance with a recursive algorithm will be easier.
 
 ## Example 2: Dog tail
+![dog tail structure](./DogTail.png)
+
 Imagine that you want to model the way a dog tail moves (in 2D). You can model the dog tail as a sequence of points representing each vertebrae, and the angle of each vertebra, and assume each vertebra of equal length l.
 We can try to figure out the generic formula to compute the exact (X,Y) position of each vertebra, or we can just infer the position of one point according to the previous point. (trigger warning: it will involve some trigonometry. ouch.).
 We have then x2=x1+cos(a)*l, and y2=y1+sin(a)*l.
 We defined the coordinates of one point according to the previous one (which in turn is calculated from the previous one, etc…). This is typically a case where recursion is simpler than the iterative process.
+
+![angle and trigonometry formula](./DetailedPoint.png)
+
 
 ## Example 3: Internal company communication
 Let's look at an imaginary big company, with several departments (marketing, R&D, engineering, operations, HR, accounting, …). The CEO has an important message to send to all employees. They have two possibilities: A) Sending the message to each employee's individual e-mail address (that's the iterative version), or B) send the message to all department heads, asking them to tell the message to each team manager, who in turn need to tell the message to all the team members. (that's the recursive version). In this case the CEO doesn't need to know exactly how or when the message will be delivered by each department head, they just need to be confident that the message will be distributed.
