@@ -8,8 +8,6 @@ thumb: ./ludde-lorentz.jpg
 description: Generic review of recursive algorithms and advice to design such algorithms
 ---
 
-# About recursive algorithms
-
 > A thousand mile trip begins with a single step
 
 ![infinite staircase](./ludde-lorentz.jpg)
@@ -34,6 +32,7 @@ But more intuitively, if you know the balance of the previous year, it is easy t
 The above expression is recursive, so writing down the function computing the account balance with a recursive algorithm will be easier.
 
 ## Example 2: Dog tail
+
 ![dog tail structure](./DogTail.png)
 
 Imagine that you want to model the way a dog tail moves (in 2D). You can model the dog tail as a sequence of points representing each vertebrae, and the angle of each vertebra, and assume each vertebra of equal length l.
