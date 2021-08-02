@@ -8,6 +8,10 @@
   min-height: 90vh;
 }
 
+#project-summary-container a {
+  color: black;
+}
+
 #project-summary-container a:link {
   text-decoration: none;
   color: black;
@@ -22,10 +26,20 @@
   text-decoration: none;
 }
 
+#project-summary-container h3 {
+  background-color: var(--primary-color);
+  color: white;
+  margin: 0 0 1em 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+
+}
+
 .project-window {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 2em;
 }
 
 hr {

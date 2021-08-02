@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'Hanayama-dev portfolio',
-    description: 'Portfolio website for Alix Fachin, under the hanayama-dev umbrella',
+    title: 'ALix Fachin portfolio',
+    description: 'Portfolio website for Alix Fachin',
     copyright: 'Copyright 2021 - Alix Fachin'
 
   },
@@ -22,6 +22,13 @@ module.exports = {
             options: {
               maxWidth: 800,
               linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-highlight-code',
+            options: {
+              terminal: "carbon",
+              theme: "blackboard",
             },
           },
         ],

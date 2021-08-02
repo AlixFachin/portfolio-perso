@@ -74,7 +74,9 @@ export default function ProjectSummary() {
           ) )
         }        
       </div>
-
+      <Fade bottom duration={800} delay={500} when={visibilityState}>
+        <Link to={`/all-projects`}><h3>All Projects</h3></Link>
+      </Fade>
     </div>
     </VisibilitySensor>
   )

@@ -39,7 +39,7 @@ export default function BlogSummary() {
             return (
             <div className="post-and-thumb-container" key={`post-container-${idx}`}>
               <Fade left duration={800} key={`post-thumb-${idx}`}>
-                <GatsbyImage image={post.frontmatter.thumb.childImageSharp.gatsbyImageData}  />
+                <GatsbyImage image={post.frontmatter.thumb.childImageSharp.gatsbyImageData} alt={`thumbnail for ${post.frontmatter.slug}`} />
               </Fade>
               <Fade right duration={800} key={`post-summary-${idx}`}>
                 <Link to={`/posts/${post.frontmatter.slug}`}>
@@ -53,6 +53,7 @@ export default function BlogSummary() {
           })
         }
       </div>
+      <Fade bottom delay={600} duration={800} ><Link to={`/all-blogposts`}><h3>All Blog Posts</h3></Link></Fade>
     </div>
   )
 }
