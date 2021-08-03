@@ -10,9 +10,9 @@ description: Generic review of recursive algorithms and advice to design such al
 
 > A thousand mile trip begins with a single step
 
-![infinite staircase](./ludde-lorentz.jpg)
-
-Photo by [Ludde Lorentz](https://unsplash.com/@luddelorentz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+| ![infinite staircase](./ludde-lorentz.jpg) |
+|--|
+| _Photo by [Ludde Lorentz](https://unsplash.com/@luddelorentz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_ |
   
 
 Before diving into it, just a bit of background: I heard about recursive algorithms more than 20 years ago, in an applied maths lesson. With time and practice I found the way of thinking in recursion relatively natural - but looking around articles about recursion and YouTube videos I found plenty of information about call stacks etc, but something crucial was missing everywhere I looked: the general principle of recursion. In this article we will not look at code snippets, because the goal is to understand the general thought process, to ultimately help people coming up with recursive algorithms.

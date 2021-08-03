@@ -11,7 +11,10 @@ thumb: ./easycrypto-thumb.jpg
 featuredImg: ./markus-spiske-matrix-unsplash.jpg
 ---
 
-![cryptography coding image](easycrypto-thumb.jpg)
+|![cryptography coding image](easycrypto-thumb.jpg) |
+|:--:|
+|_Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/coding-algorithm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_|
+  
 
 # Summary 😎
 This repository contains a code project I realized during my time at [Code Chrysalis](https://www.codechrysalis.io). <br>
