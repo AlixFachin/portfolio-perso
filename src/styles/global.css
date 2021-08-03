@@ -187,4 +187,17 @@ footer hr {
   width: 50%;
 }
 
+.ImageContainer404 {
+  max-height: 800px;
+  max-width: 600px;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.ImageContainer404 .image-caption {
+  font-size: x-small;
+  font-style: italic;
+}

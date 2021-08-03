@@ -11,7 +11,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 export default function ProjectSummary() {
 
   const [visibilityState, setVisibilityState] = useState(false)
-  const fallback_image_name = "fallback-picture-unsplash";
 
   const data = useStaticQuery(graphql`
     query GetLatestProjects {
