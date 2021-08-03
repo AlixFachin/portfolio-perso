@@ -22,6 +22,24 @@
 .section-scroll  h2 {
   display: inline;
   margin: 0.5em 1.5em;
+  transition: color ease-in-out 0.5s;
+}
+
+.section-scroll h2:hover {
+  color: var(--primary-color);
+}
+
+@media (hover: none) {
+  /* for mobile, we make the menus more like buttons */
+
+  .section-scroll h2 {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: white;
+  }
+
 }
 
 #hero h1 {

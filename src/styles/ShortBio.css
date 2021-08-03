@@ -10,7 +10,7 @@
   background: linear-gradient(to top, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
   background-repeat: no-repeat;
 
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
 
   color: white;
 
@@ -21,18 +21,21 @@
 .bio-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 10x;
+  gap: 10px;
+  align-items: center;
 }
 
 @media (max-width: 550px) {
   .bio-container {
     grid-template-columns: 1fr;
-  } 
+  }
 
+}
+
+@media (max-width: 900px) {
   .self-introduction {
     clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
   }
-
 }
 
 .bio-text {
@@ -46,4 +49,24 @@
 #self-portrait {
   border-radius: 5px;
   width: 250px;
+}
+
+.self-introduction .tagList {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (max-width: 550px) {
+  .self-introduction .tagList {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.self-introduction .tag {
+  background-color: var(--theme-warning);
+  color:black;
+}
+.skillSetList h3 {
+  margin-bottom: 0.5em;
 }

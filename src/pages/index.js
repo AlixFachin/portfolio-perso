@@ -4,6 +4,7 @@ import Footer from "../components/Footer.jsx"
 import ShortBio from "../components/ShortBio.jsx"
 import ProjectSummary from "../components/ProjectSummary.jsx"
 import BlogSummary from "../components/BlogSummary.jsx"
+import ContactMe from "../components/ContactMe.jsx"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ShortBio />
       <ProjectSummary />
       <BlogSummary />
+      <ContactMe />
       <Footer />
     </div>
   )
