@@ -32,7 +32,10 @@ export default function allProjectsPage( {data}) {
                 <h3>{ project.frontmatter.title }</h3>
               </Link>
               { displayTagsWithBadges(project.frontmatter.tags)}
-              <GatsbyImage image={project.frontmatter.thumb.childImageSharp.gatsbyImageData} alt={ project.frontmatter.title + " thumb" } />
+              <GatsbyImage 
+                image={ project.frontmatter.thumb ? project.frontmatter.thumb.childImageSharp.gatsbyImageData : data.file.childImageSharp.gatsbyImageData} 
+                alt={ project.frontmatter.title + " thumb" } 
+              />
               <p className="project-thumb-extract">
                 { project.frontmatter.description }
               </p>
@@ -67,6 +70,11 @@ query MyQuery {
           }
         }
       }
+    }
+  }
+  file(name: {eq: "fallback-picture-unsplash"}){
+    childImageSharp {
+      gatsbyImageData(width:200)
     }
   }
 }

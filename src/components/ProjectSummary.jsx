@@ -11,28 +11,34 @@ import { GatsbyImage } from "gatsby-plugin-image"
 export default function ProjectSummary() {
 
   const [visibilityState, setVisibilityState] = useState(false)
+  const fallback_image_name = "fallback-picture-unsplash";
 
   const data = useStaticQuery(graphql`
     query GetLatestProjects {
-       allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}) {
-    nodes {
-      id
-      frontmatter {
-        github
-        slug
-        title
-        description
-        tags
-        deployedLink
-        thumb {
-          childImageSharp {
-            gatsbyImageData(width:200)
+       allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}, limit: 3) {
+        nodes {
+          id
+          frontmatter {
+            github
+            slug
+            title
+            description
+            tags
+            deployedLink
+            thumb {
+              childImageSharp {
+                gatsbyImageData(width:200)
+              }
+            }
           }
         }
       }
-    }
+      file(name: {eq: "fallback-picture-unsplash"}){
+        childImageSharp {
+          gatsbyImageData(width:200)
+        }
+      }
   }
-    }
   `);
 
   function displayTagsWithBadges(tagsString) {
@@ -61,7 +67,9 @@ export default function ProjectSummary() {
                 <h3>{ project.frontmatter.title }</h3>
               </Link>
               { displayTagsWithBadges(project.frontmatter.tags)}
-              <GatsbyImage image={project.frontmatter.thumb.childImageSharp.gatsbyImageData} alt={ project.frontmatter.title + " thumb" } />
+              <GatsbyImage 
+                image={ project.frontmatter.thumb? project.frontmatter.thumb.childImageSharp.gatsbyImageData : data.file.childImageSharp.gatsbyImageData} 
+                alt={ project.frontmatter.title + " thumb" } />
               <p className="project-thumb-extract">
                 { project.frontmatter.description }
               </p>
