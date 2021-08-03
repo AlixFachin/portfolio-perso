@@ -1,5 +1,4 @@
 ---
-
 title: About Recursive Algorithms
 tags: Algorithms
 slug: about-recursion
