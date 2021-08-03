@@ -2,8 +2,9 @@ import React from 'react'
 import Layout from '../components/Layout.jsx'
 import "../styles/BlogPostDetails.css"
 import { graphql } from "gatsby"
+import SEO from "../components/SEO.jsx"
 
-export default function BlogPostDetails( { data }) {
+export default function BlogPostDetails( { data, location }) {
   const { html } = data.markdownRemark;
   const { title, tags } = data.markdownRemark.frontmatter;
   
@@ -22,6 +23,11 @@ export default function BlogPostDetails( { data }) {
 
   return (
     <Layout>
+      <SEO title={title}
+        description= {"Alix Fachin's blog: " + data.markdownRemark.frontmatter.description }
+        image={ data.markdownRemark.frontmatter.thumb? data.markdownRemark.frontmatter.thumb.childImageSharp.resize : "" }
+        pageUrl={location.href}
+      />
       <article className="blogpost-details">
         <h1 className="blogpostTitle">{title}</h1>
         {displayTagsWithBadges(tags)}
@@ -41,6 +47,16 @@ export const query = graphql`
         slug
         tags
         title
+        description
+        thumb {
+          childImageSharp {
+            resize(width:1200) {
+              src
+              width
+              height
+            }
+          }
+        }
       }
     }
   }

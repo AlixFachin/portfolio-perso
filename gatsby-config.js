@@ -7,10 +7,12 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'ALix Fachin portfolio',
-    description: 'Portfolio website for Alix Fachin',
-    copyright: 'Copyright 2021 - Alix Fachin'
-
+    title: 'Alix Fachin portfolio',
+    description: 'Portfolio website for Alix Fachin - software developer',
+    copyright: 'Copyright 2021 - Alix Fachin',
+    keywords: 'JavaScript, Developer, Front-end development, Back-end development, portfolio',
+    siteUrl: 'https://www.alix-fachin.dev',
+    author: '@AlixDev5'
   },
   plugins: [
     {
@@ -37,6 +39,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

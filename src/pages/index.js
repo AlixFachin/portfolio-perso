@@ -5,10 +5,12 @@ import ShortBio from "../components/ShortBio.jsx"
 import ProjectSummary from "../components/ProjectSummary.jsx"
 import BlogSummary from "../components/BlogSummary.jsx"
 import ContactMe from "../components/ContactMe.jsx"
+import SEO from "../components/SEO.jsx"
 
 export default function Home() {
   return (
     <div id="mainContainer">
+      <SEO title="Alix Fachin website portfolio" />
       <Hero />
       <ShortBio />
       <ProjectSummary />
