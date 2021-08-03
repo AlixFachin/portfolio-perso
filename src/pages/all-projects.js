@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout.jsx"
+import SEO from "../components/SEO.jsx"
 import { graphql, Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -24,6 +25,7 @@ export default function allProjectsPage( {data}) {
   
   return (
     <Layout>
+      <SEO title="Alix Fachin portfolio website - recent projects list" /> 
       <h1>All Projects</h1>
       <div className="all-projects-grid">
           { data.allMarkdownRemark.nodes.map( (project, idx) => (

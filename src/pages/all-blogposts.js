@@ -3,6 +3,7 @@ import Layout from "../components/Layout.jsx"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import "../styles/all-blogposts.css"
+import SEO from "../components/SEO.jsx"
 
 export default function allBlogPostsPage( {data}) {
   
@@ -22,6 +23,7 @@ export default function allBlogPostsPage( {data}) {
   
   return (
     <Layout>
+      <SEO title={"Alix Fachin portfolio website - software development blog post roll"}  />
       <h1>All Blog Posts</h1>
       <div className="all-blogposts-grid">
           { data.allMarkdownRemark.nodes.map( (post, idx) => (
