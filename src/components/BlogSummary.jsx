@@ -6,27 +6,28 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function BlogSummary() {
 
-  const data = useStaticQuery(graphql`
-    query GetLatestBlogPosts {
-       allMarkdownRemark(filter: {fields: {collection: {eq: "blog"}}}, limit: 3) {
-        nodes {
-          id
-          frontmatter {
-            slug
-            title
-            tags
-            date
-            description
-            thumb {
+  const data = useStaticQuery(graphql` {
+    allMarkdownRemark(
+      filter: {fields: {collection: {eq: "blog"} }, frontmatter: {tags: {regex: "/^(?!.*draft).*/"}}}
+      sort: {fields: frontmatter___date, order: DESC}
+    ) {
+      nodes {
+        frontmatter {
+          date
+          description
+          slug
+          tags
+          title
+          thumb {
             childImageSharp {
-              gatsbyImageData(width:200)
-              }
-           }
+              gatsbyImageData(width: 200)
+            }
           }
-          excerpt
         }
       }
     }
+  }
+  
   `);
 
   return (

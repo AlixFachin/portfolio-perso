@@ -46,7 +46,13 @@ export default function allBlogPostsPage( {data}) {
 
 export const query=graphql`
 query getAllBlogPosts {
-  allMarkdownRemark(filter: {fields: {collection: {eq: "blog"}}}) {
+  allMarkdownRemark(
+      filter: {
+        fields: { collection: {eq: "blog"} },
+        frontmatter: { tags: { regex: "/^(?!.*draft).*/" }}
+      }
+      sort: {fields: frontmatter___date, order:DESC}
+    ) {
     nodes {
       frontmatter {
         date

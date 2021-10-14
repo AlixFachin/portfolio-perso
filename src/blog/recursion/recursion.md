@@ -2,19 +2,19 @@
 title: About Recursive Algorithms
 tags: Algorithms
 slug: about-recursion
-date: May 7th, 2021
+date: 2021-05-03
 thumb: ./ludde-lorentz.jpg
 description: Generic review of recursive algorithms and advice to design such algorithms
 ---
 
 > A thousand mile trip begins with a single step
 
-| ![infinite staircase](./ludde-lorentz.jpg) |
-|--|
+| ![infinite staircase](./ludde-lorentz.jpg)                                                                                                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _Photo by [Ludde Lorentz](https://unsplash.com/@luddelorentz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_ |
-  
 
 Before diving into it, just a bit of background: I heard about recursive algorithms more than 20 years ago, in an applied maths lesson. With time and practice I found the way of thinking in recursion relatively natural - but looking around articles about recursion and YouTube videos I found plenty of information about call stacks etc, but something crucial was missing everywhere I looked: the general principle of recursion. In this article we will not look at code snippets, because the goal is to understand the general thought process, to ultimately help people coming up with recursive algorithms.
+
 > Why recursion when you could use a for loop?
 
 When you have to write down an algorithm, the initial idea very often comes first with a for loop. It is intuitive, maybe because you can clearly visualize the flow that the program will follow.
@@ -41,11 +41,12 @@ We defined the coordinates of one point according to the previous one (which in 
 
 ![angle and trigonometry formula](./DetailedPoint.png)
 
-
 ## Example 3: Internal company communication
+
 Let's look at an imaginary big company, with several departments (marketing, R&D, engineering, operations, HR, accounting, …). The CEO has an important message to send to all employees. They have two possibilities: A) Sending the message to each employee's individual e-mail address (that's the iterative version), or B) send the message to all department heads, asking them to tell the message to each team manager, who in turn need to tell the message to all the team members. (that's the recursive version). In this case the CEO doesn't need to know exactly how or when the message will be delivered by each department head, they just need to be confident that the message will be distributed.
 
 ## Putting it together
+
 So instead of trying to have a global view and solve the whole problem, adopting a recursive viewpoint is focusing on a slightly smaller issue easier to control and imagine.
 A basic version of a recursive algorithm would be the following:
 If I assume the problem is solved at step n, how do I skip to step n+1?
@@ -59,10 +60,12 @@ In some cases, the recursion is more complicated than just skipping from n to n+
 If I have two sorted arrays of size n/2, how do I "merge" them to get a sorted array of size n? (Assuming n is even - if n is odd you have to assume one array of size n/2 and one array of size n/2+1).
 
 ## ome mention about initial cases
+
 One thing is missing from a rigorous algorithm definition: initial cases. A recursive algorithm is made out of two pieces: Steps required to "jump" between n and n+1, and initial values.
 Initial values are the steps required to "stop" the recursion calls and initiate problem-solving. To put it in other words, they are special values of n where you already know the solution, where you don't need to call the function recursively.
 For example, if the problem is "sorting an array of size (n)", you may not know how to do it for all values of n. You decide to express the algorithm in a recursive way: "If I know how to do it for an array of size n-1, and I do the following steps with an additional element x, then I know how to do it for an array of size n". But, you know how to sort an empty array, right? (there is nothing to do). Likewise, you can figure out how to sort an array with only one element.
 Setting up the initial cases will have your program effectively solve the problem for some cases, then with the "recursive jump" solving the problem for all cases. But if you forget the initial cases, your program risk to end up in infinite loops (woops).
 
 # In Conclusion
+
 I hope that this article has shed some light on the actual thought process to come up with the recursive algorithm: thinking about the transition from smaller sub-problems to a bigger one, instead of trying to solve with one fell swoop. This may feel like magic at the beginning, because it is not obvious how the problem is actually solved - but the code is generally much more readable this way!
