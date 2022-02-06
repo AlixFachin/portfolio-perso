@@ -16,17 +16,15 @@ _Photo by [Dan-Cristian Pădureț](https://unsplash.com/@dancristianp?utm_source
 Let's imagine that you are in a situation where your company at work doesn't use `eslint` and doesn't have any short-term plans to install it.
 What do you do?
 Well, one thing you _could_ do is to try and program by yourself something close enough to eslint.
-This is what I did (definitely some type-II fun) and the result is at the following address: <https://github.com/AlixFachin/myriotlinter>
+This is what I tried to do (definitely some type-II fun) and the result is at the following address: <https://github.com/AlixFachin/myriotlinter>
+This post will serve as an introduction to several following about regular expressions in JavaScript and linting.
 
 ## How does it work
 
-This is a `node` executable file, so you just need to type:
+This is a `node` executable file, so you just need to type: `node riotlinter.js <riot-filename>`.
+The idea is to read the file, separate it into several blocks, and apply a set of rules to each block to list all the errors / warnings and display those nicely afterwards.
 
-```
-node riotlinter.js <riot-filename>
-```
-
-## About riot.js files
+## Before beginning, one quick word about riot files
 
 [Riot.js](https://riot.js.org) is a lightweight JavaScript front-end framework.
 `Riot` makes me think a bit about an ancestor of Svelte (i.e. the user doesn't download Riot, but Riot is an actual compiler from `xyz.riot` towards HTML files).
@@ -88,7 +86,10 @@ How would you write:
 
 Answers in the next blog post!
 
-As usual, Mozilla has a very good tutorial on this so if you are stuck feel free to have a look at:
-[MDN Guide about regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+## See as well
+
+- As usual, Mozilla has a very good tutorial on this so if you are stuck feel free to have a look at:
+  [MDN Guide about regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- And a live reg-exp parser: <https://regexr.com>
 
 See you next time! 😎
