@@ -13,8 +13,8 @@ export default function Home() {
       <SEO title="Alix Fachin website portfolio" />
       <Hero />
       <ShortBio />
-      <ProjectSummary />
       <BlogSummary />
+      <ProjectSummary />
       <ContactMe />
       <Footer />
     </div>
