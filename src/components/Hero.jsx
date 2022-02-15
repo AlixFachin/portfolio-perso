@@ -22,10 +22,10 @@ export default function Hero() {
       <Fade delay={400} duration={1200}>
       <div className="section-scroll">
         <ScrollLink to="blog-summary-container" smooth duration={1000}>
-          <h2>Blog Posts</h2>
+          <h2 className="link">Blog Posts</h2>
         </ScrollLink>
         <ScrollLink to="project-summary-container" smooth duration={1000}>
-          <h2>Projects</h2>
+          <h2 className="link">Projects</h2>
         </ScrollLink>
       </div>
       </Fade>

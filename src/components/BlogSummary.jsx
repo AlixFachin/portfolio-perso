@@ -4,12 +4,15 @@ import "../styles/BlogSummary.css"
 import Fade from 'react-reveal/Fade'
 import { GatsbyImage } from "gatsby-plugin-image"
 
+import { DateTime } from 'luxon';
+
 export default function BlogSummary() {
 
   const data = useStaticQuery(graphql` {
     allMarkdownRemark(
       filter: {fields: {collection: {eq: "blog"} }, frontmatter: {tags: {regex: "/^(?!.*draft).*/"}}}
       sort: {fields: frontmatter___date, order: DESC}
+      limit: 3
     ) {
       nodes {
         frontmatter {
@@ -36,7 +39,7 @@ export default function BlogSummary() {
       <div className="blog-posts-list">
         {
           data.allMarkdownRemark.nodes.map( (post, idx) => {
-            
+            const postDate = DateTime.fromISO(post.frontmatter.date);
             return (
             <div className="post-and-thumb-container" key={`post-container-${idx}`}>
               <Fade left duration={800} key={`post-thumb-${idx}`}>
@@ -47,6 +50,7 @@ export default function BlogSummary() {
                   <div className="post-summary">
                     <h3>{ post.frontmatter.title}</h3>
                     <p> { post.frontmatter.description} </p>
+                    <p className="dateBadge"> { postDate.toLocaleString() } </p>
                   </div>
                 </Link>
               </Fade>

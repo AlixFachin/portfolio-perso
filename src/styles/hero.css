@@ -8,18 +8,18 @@
 }
 
 #hero > * {
-  margin-left: calc(min(2em,10%));
+  margin-left: calc(min(2em, 10%));
 }
 
 .section-scroll {
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   color: var(--secondary-color);
 }
 
-.section-scroll  h2 {
+.section-scroll h2 {
   display: inline;
   margin: 0.5em 1.5em;
   transition: color ease-in-out 0.5s;
@@ -39,7 +39,6 @@
     background-color: var(--primary-color);
     color: white;
   }
-
 }
 
 @media (max-width: 550px) {
@@ -55,26 +54,27 @@
   .section-scroll a:first-child {
     flex-shrink: 0;
   }
-
 }
 
 #hero h1 {
   font-size: 3rem;
   font-weight: 500;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   margin-top: 0.2em;
   margin-bottom: 0.2em;
 }
-
 
 #hero h1:last-of-type {
   margin-top: 0;
   margin-bottom: 1em;
 }
 
+h2.link {
+  cursor: pointer;
+}
 
 .hero-emphasis {
-  color: #2F80ED;
+  color: #2f80ed;
 }
 
 /* particle.js */
@@ -83,7 +83,7 @@
   width: 100%;
   height: 100%;
   z-index: -5;
-  top:0;
+  top: 0;
   background: white;
 }
 

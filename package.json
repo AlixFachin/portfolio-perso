@@ -29,6 +29,7 @@
     "gatsby-source-filesystem": "^4.7.0",
     "gatsby-transformer-remark": "^5.7.0",
     "gatsby-transformer-sharp": "^4.7.0",
+    "luxon": "^2.3.0",
     "react": "^16.0.1",
     "react-dom": "^16.0.1",
     "react-helmet": "^6.1.0",
