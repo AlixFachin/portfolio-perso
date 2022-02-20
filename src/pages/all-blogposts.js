@@ -23,7 +23,8 @@ export default function allBlogPostsPage( {data}) {
   
   return (
     <Layout>
-      <SEO title={"Alix Fachin portfolio website - software development blog post roll"}  />
+      <SEO title={"Alix Fachin portfolio website - software development blog post roll"} 
+        description="Recent blog posts regarding software development. Author: Alix Fachin" />
       <h1>All Blog Posts</h1>
       <div className="all-blogposts-grid">
           { data.allMarkdownRemark.nodes.map( (post, idx) => (

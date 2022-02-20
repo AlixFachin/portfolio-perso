@@ -25,7 +25,8 @@ export default function allProjectsPage( {data}) {
   
   return (
     <Layout>
-      <SEO title="Alix Fachin portfolio website - recent projects list" /> 
+      <SEO title="Alix Fachin portfolio website - recent projects list"
+        description="List of personal software development projects. Author: Alix Fachin"/> 
       <h1>All Projects</h1>
       <div className="all-projects-grid">
           { data.allMarkdownRemark.nodes.map( (project, idx) => (
