@@ -5,6 +5,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import "../styles/all-blogposts.css"
 import SEO from "../components/SEO.jsx"
 
+import { DateTime } from 'luxon';
+
 export default function allBlogPostsPage( {data}) {
   
   function displayTagsWithBadges(tagsString) {
@@ -20,6 +22,7 @@ export default function allBlogPostsPage( {data}) {
       </div>);
   }
   
+  const filteredData = data.allMarkdownRemark.nodes.filter(post => DateTime.fromISO(post.frontmatter.date) < DateTime.now());
   
   return (
     <Layout>
@@ -27,7 +30,7 @@ export default function allBlogPostsPage( {data}) {
         description="Recent blog posts regarding software development. Author: Alix Fachin" />
       <h1>All Blog Posts</h1>
       <div className="all-blogposts-grid">
-          { data.allMarkdownRemark.nodes.map( (post, idx) => (
+          { filteredData.map( (post, idx) => (
             <div className="blogpost-thumb" key={`post-thumb-${idx}`}>
               <Link to={"/posts/" + post.frontmatter.slug} >
                 <h3>{ post.frontmatter.title }</h3>
