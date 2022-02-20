@@ -34,8 +34,10 @@ export default function BlogSummary() {
 
   // data is a list of posts. We filtered the draft posts, but we want to filter the posts 
   // dated in the future, and take only 3 of those.
-
-  const filteredData = data.allMarkdownRemark.nodes.filter(post => DateTime.fromISO(post.frontmatter.date) < DateTime.now()).slice(0,3);
+  const number_of_posts = 5;
+  const filteredData = data.allMarkdownRemark.nodes
+    .filter(post => DateTime.fromISO(post.frontmatter.date) < DateTime.now())
+    .slice(0, number_of_posts);
   
   return (
     <div id="blog-summary-container">

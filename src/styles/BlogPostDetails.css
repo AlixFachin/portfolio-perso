@@ -36,7 +36,10 @@ h1.blogpostTitle {
 }
 
 code {
-  background-color: lightgrey;
+  background-color: black;
+  color: orange;
+  font-family: monospace;
+  padding: 0.1em 0.5em 0.1em 0.5em;
 }
 
 th {
