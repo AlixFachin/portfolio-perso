@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs-extra')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -52,4 +53,12 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
 
+};
+
+exports.onPostBuild = () => {
+  console.log('Copying locales...');
+  fs.copySync(
+    path.join(__dirname, '/src/locales'),
+    path.join(__dirname, '/public/locales')
+  )
 };
