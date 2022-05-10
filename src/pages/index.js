@@ -8,9 +8,11 @@ import ContactMe from "../components/ContactMe.jsx"
 import SEO from "../components/SEO.jsx"
 import Spinner from "../components/Spinner.jsx";
 
+import { graphql } from "gatsby";
+
 import '../components/I18n'
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <div id="mainContainer">
       <SEO title="Alix Fachin website portfolio" />
@@ -25,3 +27,17 @@ export default function Home() {
     </div>
   )
 }
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language }}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

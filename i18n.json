@@ -1,0 +1,14 @@
+{
+    "fallbackLng": "en",
+    "lng": "en",
+    "supportedLngs": ["en", "ja"],
+
+    "ns": ["Home", "Blog", "Projects" ],
+    "defaultNS": "Home",
+    "load": "languageOnly",
+
+    "debug": true,
+    "interpolation": {
+        "escapeValue": false
+    }
+}

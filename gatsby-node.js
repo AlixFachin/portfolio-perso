@@ -1,6 +1,21 @@
 const path = require('path')
 const fs = require('fs-extra')
 
+const i18n = require('i18next')
+const i18nOptions = require('./i18n.json');
+
+console.log(`Current language array: ${i18nOptions.supportedLngs} and the namespaces ${i18nOptions.ns}`);
+i18n.init(i18nOptions);
+for (let ln of i18nOptions.supportedLngs) {
+  for (let ns of i18nOptions.ns) {
+    console.log(`Trying to import the language ressource ${ln} - ${ns}`);
+    if (fs.existsSync(`./src/locales/${ln}/${ns}.json`)) {
+      const currentResource = JSON.parse(fs.readFileSync(`./src/locales/${ln}/${ns}.json`, 'utf-8'));
+      i18n.addResourceBundle(ln, ns, currentResource);
+    }
+  }
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
@@ -51,7 +66,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.frontmatter.slug },
     })
   });
-
 
 };
 

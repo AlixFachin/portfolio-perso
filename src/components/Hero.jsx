@@ -21,18 +21,18 @@ export default function Hero() {
       {/* <VisibilitySensor onChange={ (newVisibility) => setisHeroVisible(newVisibility)  }>
         <Fade left opposite delay={300} duration={1200}  > */}
       <h1><span className="hero-emphasis">Alix Fachin</span></h1>
-      <h1>{ t('hero_welcome')}</h1>
+      <h1>{ t('Hero.hero_welcome')}</h1>
         {/* </Fade>
       </VisibilitySensor> */}
       <Fade delay={400} duration={1200}>
       <div className="section-scroll">
         <ScrollLink to="blog-summary-container" smooth duration={1000}>
-          <h2 className="link">Blog Posts</h2>
+          <h2 className="link">{t('Hero.BlogPosts')}</h2>
         </ScrollLink>
         <ScrollLink to="project-summary-container" smooth duration={1000}>
-          <h2 className="link">Projects</h2>
+          <h2 className="link">{t('Hero.Projects')}</h2>
         </ScrollLink>
-        <LanguageSwitcher />
+        <LanguageSwitcher mode="hero" />
       </div>
       </Fade>
       <div id="particles-js">

@@ -1,0 +1,15 @@
+{
+    "Hero": {
+        "hero_1" : "Hi there! My name is",
+        "name" : "Alix Fachin",
+        "hero_welcome" : "Welcome to my portfolio website!",
+        "BlogPosts": "Blog Posts",
+        "Projects": "Projects"
+    },
+    "BlogRoll": {
+        "title": "Recent Articles"
+    },
+    "Projects": {
+        
+    }
+}

@@ -62,6 +62,54 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/locales`,
+        name: 'locale'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-react-i18next',
+      options: {
+        localeJsonSourceName: 'locale',
+        languages: ['en','ja'],
+        defaultLanguage: ['en'],
+        siteUrl: 'https://alix-fachin.dev',
+        i18nextOptions: {
+            fallbackLng: 'en',
+            lng: 'en',
+    
+            ns: ['Home', 'Blog', 'Projects' ],
+            defaultNS: 'Home',
+            load: 'languageOnly',
+    
+            debug: true,
+            interpolation: {
+                escapeValue: false,
+            }            
+        },
+        pages: [
+          {
+            matchPath: '/',
+            getLanguageFromPath: false,
+            languages: ['en']
+          },
+          {
+            matchPath: '/:lang?/all-projects',
+            getLanguageFromPath: true,
+          },
+          {
+            matchPath: '/:lang?/all-blogposts',
+            getLanguageFromPath: true,
+          },        
+          {
+            matchPath: '/:lang?/index',
+            getLanguageFromPath: true,
+          }
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: [

@@ -7,6 +7,8 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { GatsbyImage } from "gatsby-plugin-image"
 import "../styles/all-projects.css"
 
+import { Translation } from "react-i18next";
+
 export default function allProjectsPage( {data}) {
   
   function displayTagsWithBadges(tagsString) {
@@ -22,11 +24,10 @@ export default function allProjectsPage( {data}) {
       </div>);
   }
   
-  
   return (
     <Layout>
       <SEO title="Alix Fachin portfolio website - recent projects list" /> 
-      <h1>All Projects</h1>
+      <h1><Translation ns="Projects">{t => { t('title') } }</Translation></h1>
       <div className="all-projects-grid">
           { data.allMarkdownRemark.nodes.map( (project, idx) => (
             <div className="project-thumb" key={`project-thumb-${idx}`}>
