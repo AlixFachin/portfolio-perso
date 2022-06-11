@@ -20,6 +20,27 @@
 .all-projects-grid .project-thumb {
   text-align: center;
   margin: 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+}
+
+.project-thumb h3 {
+  width: 100%;
+}
+
+.project-image-container {
+  align-self: center;
+  margin-left: 1em;
+  margin-right: 1em;
+
+}
+
+p.project-thumb-extract {
+  flex-grow: 1;
 }
 
 .all-projects-grid a {

@@ -14,7 +14,7 @@ export default function ProjectSummary() {
 
   const data = useStaticQuery(graphql`
     query GetLatestProjects {
-       allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}, limit: 3) {
+       allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}, limit: 3,sort: { fields: frontmatter___date, order: DESC }) {
         nodes {
           id
           frontmatter {
@@ -26,7 +26,7 @@ export default function ProjectSummary() {
             deployedLink
             thumb {
               childImageSharp {
-                gatsbyImageData(width:200)
+                gatsbyImageData(width:180)
               }
             }
           }
@@ -66,9 +66,11 @@ export default function ProjectSummary() {
                 <h3>{ project.frontmatter.title }</h3>
               </Link>
               { displayTagsWithBadges(project.frontmatter.tags)}
-              <GatsbyImage 
-                image={ project.frontmatter.thumb? project.frontmatter.thumb.childImageSharp.gatsbyImageData : data.file.childImageSharp.gatsbyImageData} 
-                alt={ project.frontmatter.title + " thumb" } />
+              <div class="project-image-container">
+                <GatsbyImage 
+                  image={ project.frontmatter.thumb? project.frontmatter.thumb.childImageSharp.gatsbyImageData : data.file.childImageSharp.gatsbyImageData} 
+                  alt={ project.frontmatter.title + " thumb" } />
+              </div>
               <p className="project-thumb-extract">
                 { project.frontmatter.description }
               </p>

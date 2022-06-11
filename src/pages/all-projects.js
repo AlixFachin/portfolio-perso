@@ -35,10 +35,12 @@ export default function allProjectsPage( {data}) {
                 <h3>{ project.frontmatter.title }</h3>
               </Link>
               { displayTagsWithBadges(project.frontmatter.tags)}
-              <GatsbyImage 
-                image={ project.frontmatter.thumb ? project.frontmatter.thumb.childImageSharp.gatsbyImageData : data.file.childImageSharp.gatsbyImageData} 
-                alt={ project.frontmatter.title + " thumb" } 
-              />
+              <div class="project-image-container">
+                <GatsbyImage 
+                  image={ project.frontmatter.thumb ? project.frontmatter.thumb.childImageSharp.gatsbyImageData : data.file.childImageSharp.gatsbyImageData} 
+                  alt={ project.frontmatter.title + " thumb" } 
+                />
+              </div>
               <p className="project-thumb-extract">
                 { project.frontmatter.description }
               </p>
@@ -57,7 +59,8 @@ export default function allProjectsPage( {data}) {
 
 export const query=graphql`
 query MyQuery {
-  allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}) {
+  allMarkdownRemark(filter: {fields: {collection: {eq: "projects"}}}, 
+                    sort: { fields: frontmatter___date, order: DESC }) {
     nodes {
       frontmatter {
         date

@@ -64,6 +64,10 @@ hr {
   border-radius: 5px;
   /* margin: 5px 4em; */
   /* box-shadow: 5px 5px 0 rgba(0,0,0,0.1); */
+
+  display: flex;
+  flex-direction: column;
+
 }
 
 .project-thumb h3 {
@@ -87,6 +91,7 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
 
   align-items: center;
   font-size: 100%;
@@ -103,6 +108,11 @@ hr {
   color: white;
 }
 
+.project-image-container {
+  width: 90%;
+  align-self: center;
+}
+
 /* Button row */
 
 .project-button-row {
@@ -111,6 +121,7 @@ hr {
   grid-gap: 20px;
   align-items: center;
   margin: 0.5em;
+  padding: 0.5em;
 }
 
 .project-button-row > a {
@@ -120,7 +131,6 @@ hr {
   color: black;
   padding: 10px 16px;
   border-radius: 10px;
-  margin-top: 20px;
   transition: all ease-in-out 0.5s;
 }
 
@@ -129,3 +139,6 @@ hr {
   background-color: var(--theme-warning);
 }
 
+.project-thumb-extract {
+  flex-grow: 1;
+}
